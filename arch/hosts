@@ -1,0 +1,11 @@
+# Static table lookup for hostnames.
+# See hosts(5) for details.
+127.0.0.1 localhost
+::1 localhost
+127.0.1.1 yuri.localdomain yuri
+185.199.108.133 raw.Githubusercontent.com
+185.199.109.133 raw.Githubusercontent.com
+185.199.110.133 raw.Githubusercontent.com
+185.199.111.133 raw.Githubusercontent.com
+192.168.31.200 EAI_LEO
+

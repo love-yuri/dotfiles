@@ -1,0 +1,25 @@
+local function microsoft_edge()
+  if vim.fn.has('macunix') then
+    return "/Applications/Microsoft\\ Edge.app/Contents/MacOS/Microsoft\\ Edge $file"
+  else
+    return "microsoft-edge $fileName"
+  end
+end
+
+require('code_runner').setup {
+  term = {
+    position = "belowright",
+    size = 15,
+  },
+  filetype = {
+    python = "python3 $file",
+    c = "cd $dir && gcc -Wall -lpthread -fno-omit-frame-pointer -pg -g -lm $fileName -o $fileNameWithoutExt.out  && $dir/$fileNameWithoutExt.out",
+    cpp = "cd $dir && g++ -lpthread -g $fileName -o $fileNameWithoutExt.out  && $dir/$fileNameWithoutExt.out",
+    sh = "bash $file",
+    html = microsoft_edge(),
+    rust = "cd $dir && rustc $fileName -o $fileNameWithoutExt.out && $dir/$fileNameWithoutExt.out",
+    r = "Rscript $file",
+    lua = "lua $file",
+    nix = "nix eval -f $file",
+  },
+}

@@ -1,0 +1,54 @@
+files:
+  - url: ""
+    time: 1686830443442.yml
+    name: config.yaml
+    selected: []
+  - time: 1686831118037.yml
+    name: SledCloud 雪橇云
+    url: http://config.sled.autos/api/v1/client/subscribe?token=e70f3a549cca3f67d92c4d2ea5ad3803
+    selected:
+      - name: GLOBAL
+        now: DIRECT
+      - name: 🌏 国内网站
+        now: 🎯 全球直连
+      - name: 🌏 国外网站
+        now: 🔰 节点选择
+      - name: 🍎 苹果服务
+        now: 🔰 节点选择
+      - name: 🎬 DisneyPlus
+        now: 🔰 节点选择
+      - name: 🎬 NETFLIX
+        now: 🔰 节点选择
+      - name: 🎬 Prime
+        now: 🔰 节点选择
+      - name: 🎬 YouTube
+        now: 🔰 节点选择
+      - name: 🎬 哔哩哔哩
+        now: 🔰 节点选择
+      - name: 🎬 国外媒体
+        now: 🔰 节点选择
+      - name: 🎬 巴哈姆特
+        now: 🔰 节点选择
+      - name: 🎬 日韩媒体
+        now: 🔰 节点选择
+      - name: 🎬 港台媒体
+        now: 🔰 节点选择
+      - name: 🎮 游戏平台
+        now: 🔰 节点选择
+      - name: 🎯 全球直连
+        now: DIRECT
+      - name: 🎵 TikTok
+        now: 🔰 节点选择
+      - name: 🐟 漏网之鱼
+        now: 🔰 节点选择
+      - name: 📲 电报信息
+        now: 🔰 节点选择
+      - name: 🔰 节点选择
+        now: 新加坡 高级IEPL中继 01
+    interval: 24
+    subInfo:
+      upload: 2435533810
+      download: 199471642123
+      total: 547608330240
+    homeWeb: https://networks.sled.lol
+index: 1
