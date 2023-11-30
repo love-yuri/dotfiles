@@ -16,9 +16,9 @@ export XDG_CURRENT_DESKTOP=Hyprland
 export HYPRLAND_LOG_WLR=1
 #export XCURSOR_THEME=Bibata-Modern-Classic
 export XCURSOR_SIZE=24
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
-export SDL_IM_MODULE=fcitx
-export GLFW_IM_MODULE=ibus
+#export GTK_IM_MODULE=fcitx
+#export QT_IM_MODULE=fcitx
+#export XMODIFIERS=@im=fcitx
+#export SDL_IM_MODULE=fcitx
+#export GLFW_IM_MODULE=ibus
 exec Hyprland
