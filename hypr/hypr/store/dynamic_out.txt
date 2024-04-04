@@ -1,1 +1,0 @@
-{"class": "playing", "text": "\u9648\u5955\u8fc5 - \u7231\u00b7\u56de\u5fc6 108 \u7cbe\u9009 - K \u6b4c\u4e4b\u738b (00:09/03:42) ", "tooltip": "K \u6b4c\u4e4b\u738b\nby \u9648\u5955\u8fc5\nfrom \u7231\u00b7\u56de\u5fc6 108 \u7cbe\u9009\n(netease-cloud-music)"}
