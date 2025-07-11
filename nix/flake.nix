@@ -22,6 +22,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";  # 冲突文件会被重命名为 filename.backup
 
             home-manager.users.yuri = import ./home.nix;
           }
