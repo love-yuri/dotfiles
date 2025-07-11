@@ -15,9 +15,13 @@
   ];
 
   # 需要默认配置的包
-  programs.hyprland.enable = true;
   programs.clash-verge.enable = true;
   programs.zsh.enable = true;
+  programs.hyprland  =  { 
+    enable = true; 
+    withUWSM = true;
+    xwayland.enable = false;  # Xwayland 可以禁用。
+  }; 
 
   # 音频配置
   services.pipewire = {
