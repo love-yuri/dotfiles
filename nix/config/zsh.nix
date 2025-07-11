@@ -26,18 +26,14 @@
       la="exa -a --icons --color=auto";
     };
 
-    # zimfw
-    zplug = {
+    antidote = {
       enable = true;
-      plugins = [
-        { name = "zsh-users/zsh-autosuggestions"; } # 记录补全
-        { name = "zsh-users/zsh-syntax-highlighting"; } # 语法高亮
-	      { name = "zsh-users/zsh-completions"; } # 增强命令补全
-        {
-          name = "romkatv/powerlevel10k";
-          tags = [ "as:theme" "depth:1" ];
-        }
-      ];
+      plugins = [''
+        zsh-users/zsh-autosuggestions
+        zsh-users/zsh-autosuggestions
+        romkatv/powerlevel10k
+        zsh-users/zsh-syntax-highlighting
+      ''];
     };
 
     initContent = ''
@@ -46,7 +42,6 @@
       setopt autopushd
       setopt correct
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-      zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
     '';
   };
 }

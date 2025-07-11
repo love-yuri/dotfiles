@@ -15,6 +15,17 @@
     nodejs
     eza
     lua
+    google-chrome
+    waybar
+    wofi
+    neovim
+    wechat
+    vscode
+    fastfetch
+    swaynotificationcenter
+    adwaita-icon-theme
+    font-awesome
+    qq
   ];
 
   imports = [

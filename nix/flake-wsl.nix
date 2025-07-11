@@ -1,28 +1,30 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
-    # home-manager, used for managing user configuration
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }: {
+  outputs = { self, nixpkgs, nixos-wsl, home-manager, ... }: {
     nixosConfigurations = {
-      # 这里的 my-nixos 替换成你的主机名称
       yuri = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
+          nixos-wsl.nixosModules.default
+          {
+            system.stateVersion = "25.05";
+            wsl.enable = true;
+          }
 
-          # 将 home-manager 配置为 nixos 的一个 module
-          # 这样在 nixos-rebuild switch 时，home-manager 配置也会被自动部署
-          home-manager.nixosModules.home-manager
+	        # home manager
+	        home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-
             home-manager.users.yuri = import ./home.nix;
           }
         ];
@@ -30,3 +32,4 @@
     };
   };
 }
+
