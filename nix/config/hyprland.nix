@@ -1,4 +1,6 @@
-{
+let
+  screenFile = "\${HOME}/Pictures/ScreenShot/$(date '+%Y-%m-%d-%H-%M-%S').png";
+in {
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -16,7 +18,7 @@
       # 自启动程序
       exec-once = [
         "waybar"
-        "dunst --title dunst"
+        "dunst --title dunst" # 通知守护进程
         "fcitx5 --replace -d"
         "clash-verge &"
         "wl-paste --type text --watch cliphist store"
@@ -45,7 +47,6 @@
         "LANGUAGE,zh_CN:en_US"
         "GDK_SCALE,1"
         "XCURSOR_SIZE,32"
-        "GDK_BACKEND=x11 qqmusic"
       ];
 
       # 通用设置
@@ -158,7 +159,6 @@
         "$mainMod, E, exec, $fileManager"
         "$mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
         "$mainMod, R, exec, $menu"
-        "$mainMod, P, pseudo,"
         "$mainMod, J, togglesplit,"
         "ALT, space, exec, rofi -show drun"
 
@@ -205,8 +205,13 @@
         "ALT, 1, exec, code --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime"
         "ALT, 2, exec, google-chrome-stable"
         "ALT, 3, exec, Typora"
-        "ALT, 4, exec, netease-cloud-music"
+        "ALT, 4, exec, GDK_BACKEND=x11 qqmusic"
         "ALT, 5, exec, linuxqq"
+        "ALT,RETURN,exec,kitty --title fly_is_kitty"
+
+        # 截图
+        ",PRINT,exec,grim ${screenFile}"
+        "$SUPER,P,exec,grim -g \"$(slurp)\" - | wl-copy"
       ];
 
       # 鼠标绑定
