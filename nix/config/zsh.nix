@@ -42,6 +42,7 @@
       setopt autopushd
       setopt correct
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+      zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
     '';
   };
 }
