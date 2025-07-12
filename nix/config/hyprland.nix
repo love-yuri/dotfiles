@@ -23,6 +23,8 @@ in {
         "clash-verge &"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
+        "swayidle -w timeout 1800 'swaylock'"
+        "hyprpaper"
       ];
 
       # 环境变量
@@ -202,7 +204,7 @@ in {
         "$mainMod, mouse_up, workspace, e-1"
 
         # 应用程序快捷键
-        "ALT, 1, exec, code --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime"
+        "ALT, 1, exec, code --ozone-platform-hint=auto --enable-wayland-ime"
         "ALT, 2, exec, google-chrome-stable"
         "ALT, 3, exec, Typora"
         "ALT, 4, exec, GDK_BACKEND=x11 qqmusic"
@@ -293,4 +295,10 @@ in {
       ];
     };
   };
+
+  # hyprpaer配置
+  home.file.".config/hypr/hyprpaper.conf".text = ''
+    preload = /home/yuri/Pictures/wallhaven/wallhaven-2k7z9x_3840x2160.png
+    wallpaper = ,/home/yuri/Pictures/wallhaven/wallhaven-2k7z9x_3840x2160.png
+  '';
 }
