@@ -24,12 +24,14 @@
     adwaita-icon-theme
     font-awesome
     qq
+    krb5
     qqmusic
     rofi
     grim
+    slurp
     cliphist
     cava
     wl-clipboard
-    rnix-lsp
+    wlogout
   ];
 }
