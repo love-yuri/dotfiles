@@ -12,12 +12,16 @@
     kitty
     dig
     pamixer
+    xdg-desktop-portal-gtk
+
+    # python
+    (python3.withPackages (ps: with ps; [ requests beautifulsoup4 ]))
   ];
 
   # 需要默认配置的包
   programs.clash-verge.enable = true;
   programs.zsh.enable = true;
-  programs.hyprland  =  { 
+  programs.hyprland = {
     enable = true; 
     withUWSM = true;
     xwayland.enable = false;  # Xwayland 可以禁用。
