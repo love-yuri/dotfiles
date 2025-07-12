@@ -13,14 +13,14 @@
     dig
     pamixer
     xdg-desktop-portal-gtk
-
-    # python
-    (python3.withPackages (ps: with ps; [ requests beautifulsoup4 ]))
+    hyprpaper
   ];
 
   # 需要默认配置的包
   programs.clash-verge.enable = true;
   programs.zsh.enable = true;
+
+  # hyprland
   programs.hyprland = {
     enable = true; 
     withUWSM = true;
