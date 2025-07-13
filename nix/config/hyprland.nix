@@ -2,7 +2,7 @@
 
 let
   # Define the source directory for your Hyprland configuration
-  hyprlandDotfiles = "${config.home.homeDirectory}/love-yuri/dotfiles/hyprland";
+  hyprlandDotfiles = "${config.home.homeDirectory}/love-yuri/dotfiles/hypr";
 in
 {
   xdg.configFile."hypr".source = config.lib.file.mkOutOfStoreSymlink hyprlandDotfiles;
