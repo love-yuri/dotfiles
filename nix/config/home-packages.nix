@@ -51,6 +51,7 @@ in {
     qq_with_krb     # QQ 官方客户端
     wechat          # 微信客户端
     vscode          # Visual Studio Code 编辑器
+    firefox         # 火狐
 
     # ------------------------------
     # Wayland 环境工具
@@ -62,8 +63,6 @@ in {
     grim            # 屏幕截图工具（Wayland 原生）
     slurp           # 区域选择工具（配合 grim 使用）
     wlogout         # 登出/关机菜单（Wayland 兼容）
-    swaylock        # 屏幕锁定
-    swayidle        # 空闲管理
     dunst           # 轻量级通知守护进程
 
     # ------------------------------

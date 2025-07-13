@@ -14,6 +14,9 @@
     pamixer
     xdg-desktop-portal-gtk
     hyprpaper
+    hyprlock
+    hyprpicker
+    hypridle
   ];
 
   # 需要默认配置的包
@@ -24,7 +27,7 @@
   programs.hyprland = {
     enable = true; 
     withUWSM = true;
-    xwayland.enable = false;  # Xwayland 可以禁用。
+    xwayland.enable = true;  # Xwayland 可以禁用。
   }; 
 
   # 音频配置
