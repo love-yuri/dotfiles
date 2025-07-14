@@ -17,6 +17,8 @@
     hyprlock
     hyprpicker
     hypridle
+    hyprcursor
+    librime-lua
   ];
 
   # 需要默认配置的包

@@ -23,6 +23,7 @@
     shellAliases = {
       ls="exa --icons --color=auto";
       ll="exa -l --icons --color=auto";
+      buildsystem="sh love-yuri/dotfiles/nix/start-nix.sh";
       la="exa -a --icons --color=auto";
     };
 
