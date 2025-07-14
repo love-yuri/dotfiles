@@ -26,21 +26,29 @@
       la="exa -a --icons --color=auto";
     };
 
-    antidote = {
-      enable = true;
-      plugins = [''
-        zsh-users/zsh-autosuggestions
-        zsh-users/zsh-autosuggestions
-        romkatv/powerlevel10k
-        zsh-users/zsh-syntax-highlighting
-      ''];
-    };
+    # antidote = {
+    #   enable = true;
+    #   plugins = [''
+    #     zsh-users/zsh-autosuggestions
+    #     zsh-users/zsh-autosuggestions
+    #     romkatv/powerlevel10k
+    #     zsh-users/zsh-syntax-highlighting
+    #   ''];
+    # };
 
     initContent = ''
       setopt extendedglob
       setopt globstarshort
       setopt autopushd
       setopt correct
+      source "$HOME/.zgenom/zgenom.zsh"
+      if ! zgenom saved; then
+        zgenom load zsh-users/zsh-completions
+        zgenom load zsh-users/zsh-syntax-highlighting
+        zgenom load zsh-users/zsh-autosuggestions
+        zgenom load romkatv/powerlevel10k powerlevel10k
+        zgenom save
+      fi
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
       zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
     '';
