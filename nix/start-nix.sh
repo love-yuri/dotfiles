@@ -15,13 +15,43 @@ if [ ! "$(ls -A "$SCRIPT_DIR")" ]; then
     exit 1
 fi
 
+# 检查是否传入 --wsl 参数
+USE_WSL=false
+for arg in "$@"; do
+    if [ "$arg" == "--wsl" ]; then
+        USE_WSL=true
+        break
+    fi
+done
+
+# 开始复制
 echo "正在复制 $SCRIPT_DIR 中的文件到 /etc/nixos/"
 sudo cp -r "$SCRIPT_DIR"/* /etc/nixos/
 
-if [ $? -eq 0 ]; then
-    echo "文件复制成功，开始重新构建 NixOS..."
-    sudo nixos-rebuild switch
-else
+if [ $? -ne 0 ]; then
     echo "错误：文件复制失败"
     exit 1
 fi
+
+# 如果使用 WSL 模式，替换配置文件
+if $USE_WSL; then
+    echo "检测到 --wsl 参数，使用 WSL 配置文件替换默认配置..."
+
+    WSL_DIR="$SCRIPT_DIR/wsl"
+    if [ ! -d "$WSL_DIR" ]; then
+        echo "错误：未找到 wsl 子目录"
+        exit 1
+    fi
+
+    for file in configuration.nix home.nix flake.nix; do
+        if [ -f "$WSL_DIR/$file" ]; then
+            echo "替换 $file ..."
+            sudo cp "$WSL_DIR/$file" /etc/nixos/
+        else
+            echo "警告：$file 不存在于 wsl 子目录中，跳过替换"
+        fi
+    done
+fi
+
+echo "文件复制完成，开始重新构建 NixOS..."
+sudo nixos-rebuild switch
