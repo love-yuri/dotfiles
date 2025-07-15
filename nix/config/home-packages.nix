@@ -24,18 +24,6 @@ in {
     unzip           # ZIP 解压工具
     p7zip           # 7z 压缩/解压支持
     lua             # 轻量级脚本语言
-    
-    # ------------------------------
-    # 开发工具链
-    # ------------------------------
-    # gcc             # GNU 编译器集合（C/C++/Fortran等）
-    clang           # clang
-    clang-tools     # 包含 clangd（LSP 服务器）、clang-format 等
-    cmake           # 跨平台构建工具
-    nodejs          # JavaScript 运行时（含 npm/npx）
-    gdb             # gdb调试器
-    sdl3            # sdl3 库
-    spdlog          # spdlog 库
 
     #python
     (python3.withPackages (ps: with ps; [ 

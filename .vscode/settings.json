@@ -37,11 +37,11 @@
   "C_Cpp.intelliSenseEngineFallback": "disabled",
   "C_Cpp.intelliSenseEngine": "disabled",
   "C_Cpp.autocomplete": "disabled",
-  "editor.fontFamily": "JetBrains Mono Medium", // 编辑器字体
-  "editor.codeLensFontFamily": "JetBrains Mono Medium",
+  "editor.fontFamily": "Maple Mono Medium", // 编辑器字体
+  "editor.codeLensFontFamily": "Maple Mono Medium",
   // "editor.fontFamily": "Consolas", // 编辑器字体 windows
   // "editor.codeLensFontFamily": "Consolas",
-  "terminal.integrated.fontFamily": "JetBrains Mono Medium", // 终端字体
+  "terminal.integrated.fontFamily": "Maple Mono Medium", // 终端字体
   // "terminal.integrated.fontFamily": "JetBrainsMonoNL Nerd Font Mono", // 终端字体
   "editor.fontSize": 24, // 编辑器文字大小
   "terminal.integrated.fontSize": 23, // 集成终端字体大小
