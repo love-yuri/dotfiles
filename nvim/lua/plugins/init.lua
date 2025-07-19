@@ -34,7 +34,9 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
   spec = {
     "tanvirtin/monokai.nvim",
-    require('plugins.blink-cmp')
+    require('plugins.blink-cmp'),
+    require('plugins.mason'),
+    require('plugins.mason-lspconfig')
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.

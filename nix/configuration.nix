@@ -12,6 +12,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   nixpkgs.config.allowUnfree = true; 
+  programs.nix-ld.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   networking = {
     hostName = "yuri"; # 主机名
