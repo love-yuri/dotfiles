@@ -1,6 +1,7 @@
-{ config, pkgs, dotfiles, ... }:
+{ config, pkgs, dotfiles, is_wsl, ... }:
 let 
   build_script_path = "${dotfiles}/nix/start-nix.sh";
+  wsl_flag = if is_wsl then "--wsl" else "";  # 使用 Nix 的条件表达式
 in {
   # 启用zsh
   programs.ssh = {
@@ -24,7 +25,7 @@ in {
     shellAliases = {
       ls="exa --icons --color=auto";
       ll="exa -l --icons --color=auto";
-      buildsystem="sh ${build_script_path}";
+      buildsystem="sh ${build_script_path} ${wsl_flag}";
       la="exa -a --icons --color=auto";
     };
 
