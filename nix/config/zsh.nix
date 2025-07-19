@@ -1,6 +1,7 @@
-{ config, pkgs, ... }:
-
-{
+{ config, pkgs, dotfiles, ... }:
+let 
+  build_script_path = "${dotfiles}/nix/start-nix.sh";
+in {
   # 启用zsh
   programs.ssh = {
     enable = true;
@@ -23,7 +24,7 @@
     shellAliases = {
       ls="exa --icons --color=auto";
       ll="exa -l --icons --color=auto";
-      buildsystem="sh love-yuri/dotfiles/nix/start-nix.sh";
+      buildsystem="sh ${build_script_path}";
       la="exa -a --icons --color=auto";
     };
 
