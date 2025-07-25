@@ -19,6 +19,10 @@
     hypridle
     hyprcursor
     librime-lua
+    blueman
+    imv
+    mpv
+    vlc
   ];
 
   # 需要默认配置的包

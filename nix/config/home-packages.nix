@@ -40,6 +40,8 @@ in {
     wechat          # 微信客户端
     vscode          # Visual Studio Code 编辑器
     firefox         # 火狐
+    typora          # typora markdown阅读
+    qbittorrent     # 种子下载工具
 
     # ------------------------------
     # Wayland 环境工具

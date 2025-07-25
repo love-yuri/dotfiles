@@ -14,6 +14,20 @@
   nixpkgs.config.allowUnfree = true; 
   programs.nix-ld.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true; # 启动时自动打开蓝牙
+    
+    # 高级设置（可选）
+    settings = {
+      General = {
+        Enable = "Source,Sink,Media,Socket";
+        # 自动连接已配对设备
+        AutoConnect = true;
+      };
+    };
+  };
+
   networking = {
     hostName = "yuri"; # 主机名
     hosts = {
