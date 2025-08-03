@@ -14,6 +14,7 @@ in {
     fastfetch       # 轻量级系统信息工具（替代 neofetch）
     btop            # 资源监控面板（替代 htop）
     eza             # 现代化 ls 替代工具（支持图标和更好排版）
+    kdePackages.ark # 压缩工具
     
     # ------------------------------
     # 终端工具
@@ -24,6 +25,7 @@ in {
     unzip           # ZIP 解压工具
     p7zip           # 7z 压缩/解压支持
     lua             # 轻量级脚本语言
+    ruby            # ruby
 
     #python
     (python3.withPackages (ps: with ps; [ 
@@ -42,6 +44,7 @@ in {
     firefox         # 火狐
     typora          # typora markdown阅读
     qbittorrent     # 种子下载工具
+    zed-editor             # 工具
 
     # ------------------------------
     # Wayland 环境工具

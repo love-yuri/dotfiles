@@ -10,8 +10,9 @@
     enable = true;
     type = "fcitx5";
     fcitx5.addons = with pkgs; [
+      # fcitx5-chinese-addons  # 拼音/双拼
       fcitx5-rime
-      fcitx5-material-color
+      fcitx5-pinyin-zhwiki   # 维基词库
     ];
   };
 

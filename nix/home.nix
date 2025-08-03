@@ -14,8 +14,7 @@ in {
   imports = [
     ./config/git.nix
     ./config/zsh.nix
-    ./config/hyprland.nix
     ./config/home-packages.nix
-    ./config/nvim.nix
+    ./config/config-link.nix
   ];
 }
