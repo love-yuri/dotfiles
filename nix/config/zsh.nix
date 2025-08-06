@@ -25,7 +25,7 @@ in {
     shellAliases = {
       ls="exa --icons --color=auto";
       ll="exa -l --icons --color=auto";
-      buildsystem="sh ${build_script_path} ${wsl_flag}";
+      buildsystem="${build_script_path}";
       la="exa -a --icons --color=auto";
     };
 

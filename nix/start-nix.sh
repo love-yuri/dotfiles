@@ -15,14 +15,11 @@ if [ ! "$(ls -A "$SCRIPT_DIR")" ]; then
     exit 1
 fi
 
-# 检查是否传入 --wsl 参数
-USE_WSL=false
-for arg in "$@"; do
-    if [ "$arg" == "--wsl" ]; then
-        USE_WSL=true
-        break
-    fi
-done
+if grep -qi "microsoft" /proc/sys/kernel/osrelease; then
+    USE_WSL=true
+else
+    USE_WSL=false
+fi
 
 # 开始复制
 echo "正在复制 $SCRIPT_DIR 中的文件到 /etc/nixos/"
@@ -35,7 +32,7 @@ fi
 
 # 如果使用 WSL 模式，替换配置文件
 if $USE_WSL; then
-    echo "检测到 --wsl 参数，使用 WSL 配置文件替换默认配置..."
+    echo "检测到 wsl，使用 WSL 配置文件替换默认配置..."
 
     WSL_DIR="$SCRIPT_DIR/wsl"
     if [ ! -d "$WSL_DIR" ]; then
