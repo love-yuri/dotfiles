@@ -44,7 +44,7 @@ in {
     firefox         # 火狐
     typora          # typora markdown阅读
     qbittorrent     # 种子下载工具
-    zed-editor             # 工具
+    zed-editor      # 工具
 
     # ------------------------------
     # Wayland 环境工具
@@ -71,6 +71,6 @@ in {
     cava            # ASCII 音乐频谱可视化
     rofi            # 应用启动器/窗口切换（X11/Wayland 通用）
     krb5            # Kerberos 网络认证协议
-    neovim          # 现代化 Vim 编辑器（内置 LSP 支持）
+    neovim          # nvim
   ];
 }

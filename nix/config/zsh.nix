@@ -24,7 +24,7 @@ in {
     };
     shellAliases = {
       ls="exa --icons --color=auto";
-      ll="exa -l --icons --color=auto";
+      ll="exa -l --git --icons --color=auto";
       buildsystem="${build_script_path}";
       la="exa -a --icons --color=auto";
     };
