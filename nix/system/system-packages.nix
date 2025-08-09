@@ -23,6 +23,11 @@
     imv
     mpv
     vlc
+    unar
+    libglvnd
+    mesa
+    libGL
+    android-sdk     # android sdk
   ];
 
   # obs-studio

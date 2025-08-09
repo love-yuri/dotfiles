@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   imports = [
@@ -11,8 +11,22 @@
   system.stateVersion = "25.05";
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  nixpkgs.config.allowUnfree = true; 
+  nixpkgs.config.allowUnfree = true;
   programs.nix-ld.enable = true;
+  hardware.graphics  = {
+    enable = true;
+    extraPackages = with pkgs; [
+      mesa
+      libglvnd
+      vulkan-loader
+      amdvlk
+    ];
+  };
+
+  environment.sessionVariables = {
+    LD_LIBRARY_PATH = "/run/opengl-driver/lib";
+  };
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   hardware.bluetooth = {
     enable = true;

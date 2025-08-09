@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, nixpkgs-unstable, ... }:
 
 let
   # 修复qq 确实krb5的问题
@@ -6,6 +6,10 @@ let
     export LD_LIBRARY_PATH=${pkgs.krb5.lib}/lib:$LD_LIBRARY_PATH
     exec ${pkgs.qq}/bin/qq "$@"
   '';
+  unstable = import nixpkgs-unstable {
+    system = pkgs.system;
+    config.allowUnfree = true; # 如果需要的话
+  };
 in {
   home.packages = with pkgs; [
     # ------------------------------
@@ -26,6 +30,7 @@ in {
     p7zip           # 7z 压缩/解压支持
     lua             # 轻量级脚本语言
     ruby            # ruby
+
 
     #python
     (python3.withPackages (ps: with ps; [ 
@@ -72,5 +77,7 @@ in {
     rofi            # 应用启动器/窗口切换（X11/Wayland 通用）
     krb5            # Kerberos 网络认证协议
     neovim          # nvim
-  ];
+  ] ++ (with unstable; [
+    jetbrains.idea-ultimate # idea
+  ]);
 }

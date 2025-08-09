@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, nixpkgs-unstable, ... }:
 
 let 
   dotfiles = "${config.home.homeDirectory}/love-yuri/dotfiles";
