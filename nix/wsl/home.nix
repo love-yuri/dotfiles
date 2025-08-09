@@ -27,5 +27,6 @@ in {
   imports = [
     ./config/git.nix
     ./config/zsh.nix
+    ./config/config-link.nix
   ];
 }
