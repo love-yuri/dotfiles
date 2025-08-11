@@ -4,22 +4,29 @@
 
 ## 必备软件安装
 
+### hyprland
+
+```
+sudo pacman -S git zsh kitty hyprland waybar
+```
+
 ### 基础安装
 
 > 安装hyprlan waybar  kitty终端 swaybg设置壁纸 wofi 查看应用
 
-```
-yay -S hyprland-git waybar-hyprland-git kitty swaybg rofi-lbonn-wayland-only-git dunst swaylock thunar polkit-gnome starship wlogout-git grim slurp pamixer cliphist wl-clipboard neofetch cava 
+```bash
+yay -S clash-verge-rev google-chrome visual-studio-code-bin
+
+yay -S rofi-lbonn-wayland-only-git
+    wofi rofi dunst thunar wlogout grim slurp pamixer cliphist wl-clipboard \ # wayland 工具
+    fastfetch cava btop eza  \
+    hyprlock hyprpaper hyprpicker hypridle hyprcursor hyprpolkitagent \ # hypr 全家桶
 ```
 
 ### 字体安装
 
 ```
 sudo pacman -S ttf-fira-code nerd-fonts-complete 
-```
-
-```
-yay -S nerd-fonts-inconsolata-lgc noto-fonts-emoji ttf-jetbrains-mono-nerd
 ```
 
 ### gtk主题安装
@@ -31,31 +38,13 @@ yay -S lxappearance xfce4-settings dracula-gtk-theme dracula-icons-git
 ## 常用字体
 
 ```bash
-sudo pacman -S ttf-fira-code 
-sudo pacman nerd-fonts-complete
-yay -S nerd-fonts-inconsolata-lgc
+yay -S otf-font-awesome noto-fonts-emoji ttf-maplemono-nf-cn-unhinted
 ```
 
 ## 输入法
 
 ```bash
-yay -S fcitx5-im fcitx5-chinese-addons  fcitx5-material-color fcitx5-pinyin-zhwiki 
-vim  /etc/environment 
-#添加以下信息
-GTK_IM_MODULE=fcitx
-QT_IM_MODULE=fcitx
-XMODIFIERS=@im=fcitx
-```
-
-## nvim
-
-### 安装
-
-```bash
-sudo pacman -S neovim nodejs git #安装neovim nodejs
-nvim # 打开自动下载packer 管理工具
-:PackerInstall #下载插件
-:checkhealth #检查依赖
+yay -S fcitx5 fcitx5-rime fcitx5-configtool
 ```
 
 ### 语言提示
@@ -84,24 +73,6 @@ rm -rf ~/.cache/nvim/
 rm -rf ~/.lua
 ```
 
-## typora
-
-[下载](https://link.zhihu.com/?target=https%3A//download.typora.io/linux/Typora-linux-x64-1.0.3.tar.gz)
-
-```bash
-sudo tar -xvf ~/Downloads/Typora-linux-x64-1.0.3.tar.gz -C /opt
-sudo mv /opt/bin/Typora-linux-x64 /opt/typora
-
-vim /usr/share/applications/typora.desktop
-[Desktop Entry]
-Type=Application
-Name=Typora
-Exec=/opt/typora/Typora
-Icon=/o/typora/resources/assets/icon/icon_512x512@2x.png
-Terminal=false
-Categories=program;InstantMessaging
-```
-
 ## zsh
 
 ```
@@ -122,6 +93,12 @@ sudo pacman -S ttf-jetbrains-mono-nerd
 ```bash
  for i in $(cliphist list | awk -F. '{ print $2 }'); do cliphist delete-query "$i"; done
 ```
+
+## 常用仓库
+
+- 光标主题: `git clone https://gitlab.com/Pummelfisch/future-cyan-hyprcursor.git`
+- 拼音词库: `git clone --depth 1 https://github.com/gaboolic/rime-frost  ~/.local/share/fcitx5/rime`
+- fcitx5 主题: `git clone https://github.com/witt-bit/fcitx5-theme-ayaya`
 
 ## 常用软件
 
