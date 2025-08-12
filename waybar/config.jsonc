@@ -10,7 +10,13 @@
     "modules-center": ["hyprland/window"],
     "modules-right": ["network", "bluetooth", "temperature","custom/power_profile","battery","backlight","pulseaudio","pulseaudio#microphone","tray"],
     "hyprland/window": {
-        "format": "{}"
+        "format": "{title}",
+        "icon": true,
+        "icon-size": 20,
+        "rewrite": {
+            "(.*) - Google Chrome": "$1",
+            "(.*) - Visual Studio Code": "$1"
+        }
     },
 
     "hyprland/workspaces": {
@@ -30,7 +36,7 @@
           "warning": 70,
           "critical": 90
         },
-        "on-click":"alacritty -t 'btop' -e btop"
+        "on-click":"kitty -t 'btop' -e btop"
     },
 
     "memory": {
