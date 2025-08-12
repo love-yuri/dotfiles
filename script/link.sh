@@ -1,4 +1,10 @@
 #!/bin/bash
+###
+ # @Author: love-yuri yuri2078170658@gmail.com
+ # @Date: 2025-08-09 21:14:32
+ # @LastEditTime: 2025-08-12 18:45:21
+ # @Description: 
+### 
 
 # 获取脚本所在目录
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
@@ -28,6 +34,7 @@ links=(
   "nvim"
   "btop"
   "dunst"
+  "waybar"
 )
 
 # 检查是否有已存在的链接
